@@ -63,7 +63,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEF {
+        KeyPress {
             display-name = "Base";
 
             // -----------------------------------------------------------------------------------------
@@ -73,11 +73,13 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none  &kp Q           &kp D           &kp R        &kp W             &kp B      &kp J      &kp F              &kp U        &kp P            &hm DELETE BACKSPACE  &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G      &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I       &none
+&none  &kp Z           &kp X           &kp M        &kp C             &kp V      &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH              &none
+                                       &kp TAB      &none             &kp RET    &kp SPACE  &none              &kp LGUI
             >;
+
+            label = "KeyPress";
         };
     };
 
