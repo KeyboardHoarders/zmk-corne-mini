@@ -1,13 +1,4 @@
-### My store https://www.keyboard-hoarders.com https://www.keyboardhoarders.etsy.com
-![ukogvc9z copy](https://github.com/user-attachments/assets/59156141-b7cd-4627-be30-9b69cd84722c)
-
+### [Keymap Configuration](https://caksoylar.github.io/keymap-drawer?keymap_yaml=H4sIAAAAAAAC_-1XXW7TQBB-zykGlXYBuZA4pS3bFxzH-SGuYxyXAlUpbmKpKE5c2c6DiXyN3obLcJI6M4OTqKCokSJRtS_frL_5dnd2vDtrB14aThIJ05-j4cXQTy9DLxpI6IfR2M9KgZf6USxLAB0_tSM_xvYuCIHmI2Id0UE8RawhfkBsIJ4g2ojTfLqapnd6tqYbClxJqBum4RrZ4tBsZloNNabRcKF50s4KvjfnNdOd8y3iddcx56Q7F_da7QbLm4hfCpWFKqfdbC3JZi6K1FketbugX4qhveAogl5e2lfEz4jHiDriJ8QOokkdFOrxGvHN4iCuRrm2JiPbG9CLMFy0mF5qpaPLMKAB82DyBsllEe7vm18KJOm1LyGJvHGc_fceccDJPGT7Tjzg1ayVgT1e-Vu2-48uAxVeucq2upkMIHPlBwMiDMs1qNqJ8roT0pFcdQDFlBeWsX3G9j3brVXzC0mKIy4aYhMZEmcczjnZ5_S0TU_fVvSe1WS6I2zQHKdLV0i9e2pROZvV0LVDe4H4kgLa4TBfsf3-2A7MPTb5vzdunPgj-ZS4jXicZg26VtFs4WW95qHciZPJ4Ed4MRkHYX_40Ld6jT7g8op7l6v8hVPF0xHe3CD9ML--8n-BXbiWcFZWoHKeq4f5V3JPZ1JVFVCrf2i8MslRPVBgr8wOKielW-bBwD6GDAAA)
 
 ### Keymap Layout
-
-
-![corne-mini_keymap](https://github.com/user-attachments/assets/a631bcff-280e-4bcc-9952-5bd3f432b854)
-
-
-### How can you access different Bluetooth profiles? For example, you can pair your phone with your keyboard and then seamlessly switch between using it with your phone and your computer.
-
-![bluetoothpair-guide](https://github.com/user-attachments/assets/e0e91ebb-ae41-43c8-b502-49e237e52501)
+![image](https://github.com/user-attachments/assets/3ec18e67-b2e0-469b-ac59-cf2993149f8e)
