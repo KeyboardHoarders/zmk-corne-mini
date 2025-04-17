@@ -25,36 +25,11 @@
             global-quick-tap;
         };
 
-        para: para {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
-
         caps: caps {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
             continue-list = <MINUS BACKSPACE>;
-        };
-
-        paraless: paraless {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        paragreat: paragreat {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -84,6 +59,15 @@
 
     //
 
+    macros {
+        hypr_change: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 2 &kp LS(LEFT_GUI)>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -97,10 +81,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp Q           &kp D           &kp R        &kp W             &kp B      &kp J      &kp F              &kp U        &kp P            &kp BACKSPACE    &none
+&none  &kp Q           &kp D           &kp R        &kp W             &kp B      &kp J      &kp F              &kp U        &kp P            &hypr_change     &none
 &none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G      &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &none
 &none  &kp Z           &kp X           &kp M        &kp C             &kp V      &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH         &none
-                                       &mo 1        &mo 3             &kp RET    &kp SPACE  &mo 2              &mo 4
+                                       &mo 1        &tog 3            &kp RET    &kp SPACE  &mo 2              &mo 4
             >;
 
             label = "KeyPress";
@@ -130,10 +114,10 @@
 
         Mouse {
             bindings = <
-&trans  &none  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_UP     &none     &none   &mkp LCLK  &mkp MCLK  &mkp RCLK     &none      &trans
-&trans  &none  &mmv MOVE_LEFT   &mkp LCLK       &mmv MOVE_RIGHT  &none     &none   &kp LEFT   &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &none  &msc SCRL_LEFT   &mmv MOVE_DOWN  &msc SCRL_DOWN   &none     &none   &none      &none      &none         &none      &trans
-                                &trans          &trans           &trans    &trans  &trans     &trans
+&trans  &none      &msc SCRL_RIGHT    &mmv MOVE_Y(600)   &msc SCRL_UP      &none     &none   &none     &mkp MCLK  &none         &none      &trans
+&trans  &mkp RCLK  &mmv MOVE_X(-600)  &mkp LCLK          &mmv MOVE_X(600)  &none     &none   &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &none      &msc SCRL_LEFT     &mmv MOVE_Y(-600)  &msc SCRL_DOWN    &none     &none   &none     &none      &none         &none      &trans
+                                      &trans             &tog 0            &trans    &trans  &trans    &trans
             >;
 
             label = "MSE";
