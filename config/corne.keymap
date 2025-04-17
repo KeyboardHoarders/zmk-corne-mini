@@ -63,7 +63,7 @@
         hypr_change: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 2 &kp LS(LEFT_GUI)>;
+            bindings = <&mo 2 &kp LS(LEFT_GUI)>;
             label = "NEW_MACRO";
         };
     };
@@ -114,10 +114,10 @@
 
         Mouse {
             bindings = <
-&trans  &none      &msc SCRL_RIGHT    &mmv MOVE_Y(1500)   &msc SCRL_UP      &none     &none   &none     &mkp MCLK  &none         &none      &trans
-&trans  &mkp RCLK  &mmv MOVE_X(-1500)  &mkp LCLK          &mmv MOVE_X(1500)  &none     &none   &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &none      &msc SCRL_LEFT     &mmv MOVE_Y(-1500)  &msc SCRL_DOWN    &none     &none   &none     &none      &none         &none      &trans
-                                      &trans             &tog 0            &trans    &trans  &trans    &trans
+&trans  &none      &msc SCRL_RIGHT     &mmv MOVE_Y(1500)   &msc SCRL_UP       &none     &none   &none     &mkp MCLK  &none         &none      &trans
+&trans  &mkp RCLK  &mmv MOVE_X(-1500)  &mkp LCLK           &mmv MOVE_X(1500)  &none     &none   &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &none      &msc SCRL_LEFT      &mmv MOVE_Y(-1500)  &msc SCRL_DOWN     &none     &none   &none     &none      &none         &none      &trans
+                                       &trans              &tog 0             &trans    &trans  &trans    &trans
             >;
 
             label = "MSE";
