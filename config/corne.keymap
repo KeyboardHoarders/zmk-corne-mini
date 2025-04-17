@@ -52,7 +52,7 @@
         };
 
         Backspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp DELETE>;
             key-positions = <10 9>;
         };
     };
@@ -81,10 +81,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp Q           &kp D           &kp R        &kp W             &kp B      &kp J      &kp F              &kp U        &kp P            &hypr_change     &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G      &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &none
-&none  &kp Z           &kp X           &kp M        &kp C             &kp V      &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH         &none
-                                       &mo 1        &tog 3            &kp RET    &kp SPACE  &mo 2              &mo 4
+&none  &kp Q           &kp D           &kp R        &kp W             &kp B            &kp J      &kp F              &kp U        &kp P            &hypr_change     &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G            &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &none
+&none  &kp Z           &kp X           &kp M        &kp C             &kp V            &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH         &none
+                                       &mo 1        &tog 3            &kp BACKSPACE    &kp SPACE  &mo 2              &mo 4
             >;
 
             label = "KeyPress";
