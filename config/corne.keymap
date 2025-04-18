@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define DEF 0
 #define NAV 1
@@ -41,32 +42,13 @@
             key-positions = <1 2>;
         };
 
-        Return {
-            bindings = <&kp ENTER>;
-            key-positions = <22 21>;
-        };
-
         Tab {
             bindings = <&kp TAB>;
             key-positions = <13 14>;
         };
-
-        Backspace {
-            bindings = <&kp DELETE>;
-            key-positions = <10 9>;
-        };
     };
 
     //
-
-    macros {
-        hypr_change: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&mo 2 &kp LS(LEFT_GUI)>;
-            label = "NEW_MACRO";
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -81,10 +63,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp Q           &kp D           &kp R        &kp W             &kp B            &kp J      &kp F              &kp U        &kp P            &kp SINGLE_QUOTE  &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G            &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I   &none
-&none  &kp Z           &kp X           &kp M        &kp C             &kp V            &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH          &none
-                                       &mo 1        &to 3             &kp BACKSPACE    &kp SPACE  &to 2              &mo 4
+&none  &kp Q           &kp D           &kp R        &kp W             &kp B         &kp J      &kp F              &kp U        &kp P            &kp BACKSPACE    &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G         &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &none
+&none  &kp Z           &kp X           &kp M        &kp C             &kp V         &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH         &none
+                                       &mo 1        &to 3             &kp RETURN    &kp SPACE  &mo 2              &mo 4
             >;
 
             label = "KeyPress";
@@ -103,10 +85,10 @@
 
         NumPad {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &none             &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp LEFT_GUI      &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp LS(LEFT_GUI)  &trans
-                        &trans  &trans  &trans    &kp N0  &to 0   &trans
+                        &trans  &trans  &trans    &kp N0  &trans  &trans
             >;
 
             label = "NUM";
@@ -114,10 +96,10 @@
 
         Mouse {
             bindings = <
-&trans  &kp F5     &msc SCRL_RIGHT     &mmv MOVE_Y(-2000)  &msc SCRL_UP       &none     &none   &none     &none     &none         &none      &trans
-&trans  &mkp RCLK  &mmv MOVE_X(-2000)  &mkp LCLK           &mmv MOVE_X(2000)  &none     &none   &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &none      &msc SCRL_LEFT      &mmv MOVE_Y(2000)   &msc SCRL_DOWN     &none     &none   &none     &none     &none         &none      &trans
-                                       &trans              &to 0              &trans    &trans  &trans    &trans
+&trans  &kp F5     &msc SCRL_UP        &mmv MOVE_Y(-2000)  &msc SCRL_RIGHT    &none     &none           &none     &none     &none         &none      &trans
+&trans  &mkp RCLK  &mmv MOVE_X(-2000)  &mkp LCLK           &mmv MOVE_X(2000)  &none     &none           &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &none      &msc SCRL_DOWN      &mmv MOVE_Y(2000)   &msc SCRL_LEFT     &none     &none           &none     &none     &none         &none      &trans
+                                       &trans              &to 0              &trans    &kp LEFT_SHIFT  &to 3     &trans
             >;
 
             label = "MSE";
@@ -125,10 +107,10 @@
 
         System {
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &studio_unlock    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                                    &trans        &trans        &trans            &trans  &trans  &trans
+&trans  &trans          &trans           &trans        &trans        &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans        &trans        &studio_unlock    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                                         &trans        &trans        &trans            &trans  &trans  &trans
             >;
 
             label = "SYS";
