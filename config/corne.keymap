@@ -81,10 +81,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp Q           &kp D           &kp R        &kp W             &kp B            &kp J      &kp F              &kp U        &kp P            &hypr_change     &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G            &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &none
-&none  &kp Z           &kp X           &kp M        &kp C             &kp V            &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH         &none
-                                       &mo 1        &tog 3            &kp BACKSPACE    &kp SPACE  &mo 2              &mo 4
+&none  &kp Q           &kp D           &kp R        &kp W             &kp B            &kp J      &kp F              &kp U        &kp P            &kp SINGLE_QUOTE  &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL H  &hm LEFT_SHIFT T  &kp G            &kp Y      &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I   &none
+&none  &kp Z           &kp X           &kp M        &kp C             &kp V            &kp K      &kp L              &kp COMMA    &kp DOT          &kp FSLH          &none
+                                       &mo 1        &to 3             &kp BACKSPACE    &kp SPACE  &to 2              &mo 4
             >;
 
             label = "KeyPress";
@@ -103,10 +103,10 @@
 
         NumPad {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &tog 0  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-                        &trans  &trans  &trans    &kp N0  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &none             &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp LS(LEFT_GUI)  &trans
+                        &trans  &trans  &trans    &kp N0  &to 0   &trans
             >;
 
             label = "NUM";
@@ -114,10 +114,10 @@
 
         Mouse {
             bindings = <
-&trans  &kp F5     &msc SCRL_RIGHT     &mmv MOVE_Y(-1500)   &msc SCRL_UP       &none     &none   &none     &mkp MCLK  &none         &none      &trans
-&trans  &mkp RCLK  &mmv MOVE_X(-1500)  &mkp LCLK           &mmv MOVE_X(1500)  &tog 0    &none   &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &none      &msc SCRL_LEFT      &mmv MOVE_Y(1500)  &msc SCRL_DOWN     &none     &none   &none     &none      &none         &none      &trans
-                                       &trans              &tog 0             &trans    &trans  &trans    &trans
+&trans  &kp F5     &msc SCRL_RIGHT     &mmv MOVE_Y(-1500)  &msc SCRL_UP       &none     &none   &none     &none     &none         &none      &trans
+&trans  &mkp RCLK  &mmv MOVE_X(-1500)  &mkp LCLK           &mmv MOVE_X(1500)  &none     &none   &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &none      &msc SCRL_LEFT      &mmv MOVE_Y(1500)   &msc SCRL_DOWN     &none     &none   &none     &none     &none         &none      &trans
+                                       &trans              &to 0              &trans    &trans  &trans    &trans
             >;
 
             label = "MSE";
