@@ -1,11 +1,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define NAV 1
 #define SYM 2
 #define ADJ 3
+#define EXTRA 4
 
 //testing mouse movement and scroll binds...
 
@@ -215,6 +217,16 @@
 &trans  &kp F1        &kp F2         &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
 &trans  &hm LGUI F11  &hm LSHFT F12  &trans        &trans      &studio_unlock            &trans  &trans  &trans  &trans  &trans       &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
+                                     &trans        &trans      &trans            &trans  &trans  &trans
+            >;
+        };
+
+        EXTRA {
+                display-name = "System";
+            bindings = <
+&trans  &trans        &trans         &trans        &trans      &trans            &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans  &trans  &trans        &trans      &trans            &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                      &trans        &trans      &trans            &trans  &trans  &trans
             >;
         };
