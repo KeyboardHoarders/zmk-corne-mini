@@ -108,8 +108,8 @@
         compatible = "zmk,conditional-layers";
 
         sys_layer {
-            if-layers = <SYM NAV>;
-            then-layer = <SYS>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
