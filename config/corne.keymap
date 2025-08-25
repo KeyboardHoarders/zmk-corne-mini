@@ -66,10 +66,10 @@
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &kp A  &kp B  &kp C  &kp D  &kp E    &kp F  &kp G  &kp H  &kp I  &kp J  &trans
-&trans  &kp K  &kp L  &kp M  &kp N  &kp O    &kp P  &kp Q  &kp R  &kp S  &kp T  &trans
-&trans  &kp U  &kp V  &kp W  &kp X  &kp Y    &kp Z  &kp N1 &kp N2 &kp N3 &kp N4 &trans
-                     &trans &trans &trans   &trans &trans &trans
+&trans  &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT   &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &kp LBKT  &kp RBKT  &kp LBRC   &kp RBRC   &kp BSLH    &kp PIPE   &kp EQUAL  &kp PLUS   &kp MINUS &kp UNDER &trans  
+&trans  &kp LT    &kp GT    &kp QMARK  &kp DQT    &kp TILDE   &kp GRAVE  &kp SQT    &kp COLON  &kp SEMI  &kp FSLH  &trans
+                           &trans     &trans     &trans      &trans     &trans     &trans
             >;
         }; 
 
