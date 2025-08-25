@@ -66,13 +66,13 @@
 
         SYM {
             display-name = "Sym";
-            bindings = < 
-&trans  &kp DE_EXCL   &kp DE_AT        &kp DE_HASH     &kp DE_DLLR    &kp DE_PRCNT  &kp DE_CARET  &kp DE_EQUAL  &kp DE_PLUS   &kp DE_ASTRK  &kp DE_FSLH  &trans
-&trans  &hm LGUI DE_LBKT  &hm LSHFT DE_RBKT  &hm LALT DE_U_UMLAUT  &hm LCTRL DE_A_UMLAUT  &kp DE_SHARP_S  &hm RCTRL DE_LPAR  &hm RALT DE_RPAR  &hm RSHFT DE_LBRC  &hm RGUI DE_RBRC  &kp DE_BSLH  &trans
-&trans  &kp DE_LT     &kp DE_GT       &kp DE_QMARK    &kp DE_DQT     &kp DE_TILDE  &kp DE_AMPS   &kp DE_SQT    &kp DE_GRAVE  &kp DE_PIPE   &kp DE_COLON &trans
+            bindings = 
+&trans  &kp DE_EXCL   &kp AT          &kp DE_HASH     &kp DE_DLLR    &kp DE_PRCNT  &kp DE_CARET  &kp DE_EQUAL  &kp DE_PLUS   &kp DE_ASTRK  &kp DE_FSLH  &trans
+&trans  &hm LGUI LBKT &hm LSHFT RBKT  &hm LALT DE_U_UMLAUT &hm LCTRL DE_A_UMLAUT &kp DE_SHARP_S &hm RCTRL DE_LPAR &hm RALT DE_RPAR &hm RSHFT LBRC &hm RGUI RBRC &kp DE_BSLH &trans
+&trans  &kp DE_LT     &kp GT          &kp DE_QMARK    &kp DE_DQT     &kp TILDE     &kp DE_AMPS   &kp DE_SQT    &kp DE_GRAVE  &kp PIPE      &kp DE_COLON &trans
                               &kp LGUI          &trans             &kp SPACE     &kp RET       &trans         &trans
             >;
-        };  
+        }; 
 
         NAV {
             display-name = "Nav";
