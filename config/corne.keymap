@@ -7,131 +7,98 @@
 #define DEF 0
 #define SYM 1
 #define NAV 2
-#define ADJ 3
-#define EXTRA 4
-
-//testing mouse movement and scroll binds...
+#define SYS 3
+#define CRIT 4
 
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-
             quick-tap-ms = <180>;
             global-quick-tap;
         };
 
         para: para {
             compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
 
         caps: caps {
             compatible = "zmk,behavior-caps-word";
-            label = "CAPS";
             #binding-cells = <0>;
             continue-list = <MINUS BACKSPACE>;
         };
 
         paraless: paraless {
             compatible = "zmk,behavior-mod-morph";
-            label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
             #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
             mods = <(MOD_LSFT)>;
         };
 
         paragreat: paragreat {
             compatible = "zmk,behavior-mod-morph";
-            label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
             #binding-cells = <0>;
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
             mods = <(MOD_LSFT)>;
         };
     };
-
-
-    //
 
     keymap {
         compatible = "zmk,keymap";
 
         DEF {
-                display-name = "Base";
-            // -----------------------------------------------------------------------------------------
-            // |  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U   |  I  |  O  |  P  |
-            // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |
-            // |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
+            display-name = "Base";
             bindings = <
 &kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T        &kp DE_Z    &kp U        &kp I          &kp O        &kp P          &kp BACKSPACE
 &kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G        &kp H    &hm RCTRL J  &hm RALT K     &hm RSHFT L  &hm RGUI DE_O_UMLAUT  &kp SQT
 &kp LCTRL  &kp DE_Y       &kp X        &kp C       &kp V        &kp B        &kp N    &kp M        &kp COMMA      &kp DOT      &kp DE_MINUS       &kp RSHFT
-                                    &kp LGUI    &tog 1        &kp SPACE    &kp RET  &tog 2    &kp BACKSPACE
+                                    &kp LGUI    &tog SYM        &kp SPACE    &kp RET  &tog NAV    &kp BACKSPACE
             >;
         };
 
         SYM {
-                display-name = "Sym";
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  Ü  |  *  |  (  |  )  | BKSP |
-            // | CTRL |  Ä   |  &   |  ß   |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+            display-name = "Sym";
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH           &kp DLLR         &kp PRCNT    &kp CARET  &kp DE_U_UMLAUT         &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RPAR       &trans
-&trans  &kp DE_A_UMLAUT     &kp DE_SHARP_S  &hm LALT AMPS  &hm LCTRL SQT    &kp GRAVE    &kp MINUS  &hm RCTRL EQUAL  &hm RALT LBKT  &hm RSHFT RBKT        &hm RGUI BSLH  &trans
-&trans  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS         &kp LBRC       &kp RBRC              &kp PIPE       &trans
+&trans  &kp EXCL  &kp AT          &kp HASH           &kp DLLR         &kp PRCNT    &kp CARET  &kp EQUAL         &kp PLUS      &kp ASTRK  &kp FSLH       &trans
+&trans  &hm LGUI LBKT     &hm LSHFT RBKT  &hm LALT DE_U_UMLAUT  &hm LCTRL DE_A_UMLAUT    &kp DE_SHARP_S    &hm RCTRL LPAR  &hm RALT RPAR  &hm RSHFT LBRC  &hm RGUI RBRC        &kp BSLH  &trans
+&trans  &kp LT    &kp GT  &kp QMARK     &kp DQT  &kp TILDE    &kp AMPS  &kp SQT         &kp GRAVE       &kp PIPE              &kp COLON       &trans
                                   &kp LGUI           &trans           &kp SPACE    &kp RET    &trans           &trans
             >;
         };
 
-
         NAV {
-                display-name = "Nav";
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |    j |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
+            display-name = "Nav";
             bindings = <
 &trans  &kp N1       &kp N2        &kp N3             &kp N4           &kp N5           &kp N6   &kp N7        &kp N8       &kp N9        &kp N0            &trans
-&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT UP_ARROW  &hm LCTRL DEL    &kp PAGE_UP      &kp N0   &hm RCTRL N4  &hm RALT N5  &hm RSHFT N6  &hm RGUI PAGE_UP  &trans
-&trans  &trans       &kp LEFT      &kp DOWN           &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN     &trans
+&trans  &hm LGUI TAB  &trans  &trans  &hm LCTRL DEL    &trans      &hm RCTRL LEFT   &hm RALT DOWN  &hm RSHFT UP  &hm RGUI RIGHT  &kp ESC  &trans
+&trans  &trans       &trans      &trans           &trans  &trans    &kp PG_UP   &kp PG_DN        &trans       &trans        &trans     &trans
                                    &kp LGUI           &trans           &kp SPACE        &kp RET  &trans        &trans
             >;
         };
 
-
-        ADJ {
-                display-name = "System";
+        SYS {
+            display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2         &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &hm LGUI F11  &hm LSHFT F12  &trans        &trans      &studio_unlock            &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
+&trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_BRI_DN &kp C_BRI_UP    &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans &trans &trans &trans      &trans            &hm RCTRL mmv MOVE_LEFT  &hm RALT mmv MOVE_DOWN  &hm RSHFT mmv MOVE_UP  &hm RGUI mmv MOVE_RIGHT  &trans       &trans
+&trans  &trans       &trans   &trans  &tog CRIT  &trans    &mkp LCLK  &mkp RCLK  &msc SCRL_UP  &msc SCRL_DOWN  &trans  &trans
                                      &trans        &trans      &trans            &trans  &trans  &trans
             >;
         };
 
-        EXTRA {
-                display-name = "System";
+        CRIT {
+            display-name = "Critical";
             bindings = <
-&trans  &trans       &trans         &mmv MOVE_UP       &trans      &msc SCRL_UP    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN     &mmv MOVE_RIGHT   &msc SCRL_DOWN            &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans       &trans   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans         &trans        &trans      &trans            &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_CLR  &trans            &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans       &trans   &trans  &bootloader  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &trans  &trans
                                      &trans        &trans      &trans            &trans  &trans  &trans
             >;
         };
@@ -140,9 +107,9 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        l3 {
-            if-layers = <1 2>;
-            then-layer = <3>;
+        sys_layer {
+            if-layers = <SYM NAV>;
+            then-layer = <SYS>;
         };
     };
 };
