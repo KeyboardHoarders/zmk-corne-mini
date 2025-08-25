@@ -87,7 +87,7 @@
             display-name = "System";
             bindings = <
 &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_BRI_DN &kp C_BRI_UP    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans &trans &trans &trans      &trans            &hm RCTRL mmv MOVE_LEFT  &hm RALT mmv MOVE_DOWN  &hm RSHFT mmv MOVE_UP  &hm RGUI mmv MOVE_RIGHT  &trans       &trans
+&trans  &trans &trans &trans &trans      &trans            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans       &trans
 &trans  &trans       &trans   &trans  &tog 4  &trans    &mkp MB1  &mkp MB2  &msc SCRL_UP  &msc SCRL_DOWN  &trans  &trans
                                      &trans        &trans      &trans            &trans  &trans  &trans
             >;
