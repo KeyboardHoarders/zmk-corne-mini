@@ -10,6 +10,18 @@
 #define SYS 3
 #define CRIT 4
 
+#define MAC_DE_AT    (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_L)))   /* @ = ⌥+L */
+#define MAC_DE_LBKT  (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_5)))   /* [ = ⌥+5 */
+#define MAC_DE_RBKT  (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6)))   /* ] = ⌥+6 */
+#define MAC_DE_LBRC  (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8)))   /* { = ⌥+8 */
+#define MAC_DE_RBRC  (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9)))   /* } = ⌥+9 */
+#define MAC_DE_PIPE  (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7)))   /* | = ⌥+7 */
+#define MAC_DE_BSLH  (LS(LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7)))) /* \ = ⌥⇧+7 */
+#define MAC_DE_TILDE (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_N)))   /* ~ = ⌥+N */
+/* caret/backtick can be dead keys; we’ll use these “printing” variants */
+#define MAC_DE_CARET (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6_AND_CARET))) /* ^ */
+#define MAC_DE_GRAVE (LA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE)))
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -66,13 +78,18 @@
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &kp DE_EXCL   &kp DE_AT        &kp DE_HASH     &kp DE_DLLR    &kp DE_PRCNT  &kp DE_CARET  &kp DE_EQUAL  &kp DE_PLUS   &kp DE_ASTRK  &kp DE_FSLH  &trans
-&trans  &hm LGUI DE_LBKT  &hm LSHFT DE_RBKT  &hm LALT DE_U_UMLAUT  &hm LCTRL DE_A_UMLAUT  &kp DE_SHARP_S
-        &hm RCTRL DE_LPAR  &hm RALT DE_RPAR  &hm RSHFT DE_LBRC     &hm RGUI DE_RBRC       &kp DE_BSLH  &trans
-&trans  &kp DE_LT     &kp DE_GT       &kp DE_QMARK    &kp DE_DQT     &kp DE_TILDE  &kp DE_AMPS   &kp DE_SQT    &kp DE_GRAVE  &kp DE_PIPE   &kp DE_COLON &trans
-                              &kp LGUI          &trans             &kp SPACE     &kp RET       &trans         &trans
+&trans  &kp DE_EXCL     &kp MAC_DE_AT   &kp DE_HASH   &kp DE_DLLR   &kp DE_PRCNT  &kp MAC_DE_CARET
+        &kp DE_EQUAL    &kp DE_PLUS     &kp DE_ASTRK  &kp DE_FSLH   &trans
+
+&trans  &hm LGUI MAC_DE_LBKT   &hm LSHFT MAC_DE_RBKT  &hm LALT DE_U_UMLAUT  &hm LCTRL DE_A_UMLAUT  &kp DE_SHARP_S
+        &hm RCTRL DE_LPAR      &hm RALT DE_RPAR       &hm RSHFT MAC_DE_LBRC &hm RGUI MAC_DE_RBRC   &kp MAC_DE_BSLH  &trans
+
+&trans  &kp DE_LT       &kp DE_GT       &kp DE_QMARK  &kp DE_DQT    &kp MAC_DE_TILDE  &kp DE_AMPS
+        &kp DE_SQT      &kp MAC_DE_GRAVE &kp MAC_DE_PIPE &kp DE_COLON &trans
+
+                  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &trans
             >;
-        };   
+        };  
 
         NAV {
             display-name = "Nav";
