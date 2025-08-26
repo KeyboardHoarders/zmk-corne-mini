@@ -68,7 +68,7 @@
             bindings = <
 &trans  &kp QZ_EXCLAMATION    &kp QZ_AT             &kp QZ_HASH           &kp QZ_USD            &kp QZ_PERCENT        &kp QZ_CARET          &kp QZ_EQUAL          &kp QZ_PLUS           &kp LS(RBKT)          &kp LS(N7)            &trans
 &trans  &hm LGUI QZ_LEFT_BRACKET &hm LSHFT QZ_RIGHT_BRACKET &hm LALT QZ_UE &hm LCTRL QZ_AE &kp QZ_SZ &hm RCTRL QZ_LEFT_PARENTHESIS &hm RALT QZ_RIGHT_PARENTHESIS &hm RSHFT QZ_LEFT_BRACE &hm RGUI QZ_RIGHT_BRACE &kp QZ_BACKSLASH &trans
-&trans  &kp QZ_EURO           &kp QZ_PARA           &kp QZ_QMARK          &kp QZ_DOUBLE_QUOTES  &kp QZ_TILDE          &kp QZ_AMPERSAND      &kp QZ_SINGLE_QUOTE   &kp EQUAL             &kp QZ_PIPE           &kp QZ_COLON          &trans
+&trans  &kp NUBS              &kp QZ_QMARK          &kp QZ_DOUBLE_QUOTES  &kp QZ_GRAVE          &kp QZ_TILDE          &kp QZ_AMPERSAND      &kp QZ_SINGLE_QUOTE   &kp QZ_PIPE           &kp QZ_COLON          &kp TRANS             &trans
                                                     &kp LGUI              &trans                &kp SPACE             &kp RET               &trans                &trans
             >;
         }; 
