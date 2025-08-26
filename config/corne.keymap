@@ -66,7 +66,7 @@
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &kp EXCL     &kp RA(Q)    &kp BSLH     &kp LS(N4)   &kp LS(N5)   &kp LS(LA(N6)) &kp LS(N6)   &kp LS(RBKT) &kp LS(N8)   &kp LS(N9)   &trans
+&trans  &kp EXCL     &kp LA(L)    &kp BSLH     &kp LS(N4)   &kp LS(N5)   &kp LS(LA(N6)) &kp LS(N6)   &kp LS(RBKT) &kp LS(N8)   &kp LS(N9)   &trans
 &trans  &hm LGUI LA(N5) &hm LSHFT LA(N6) &hm LALT DE_U_UMLAUT &hm LCTRL DE_A_UMLAUT &kp DE_SHARP_S &hm RCTRL LS(N8) &hm RALT LS(N9) &hm RSHFT LA(N8) &hm RGUI LA(N9) &kp LA(N7) &trans
 &trans  &kp NUBS     &kp LS(NUBS) &kp LS(MINUS) &kp LS(N2)   &kp LA(RBKT) &kp LS(N6)   &kp RBKT     &kp LS(DOT)   &kp LS(COMMA) &kp LS(N7)   &trans
                                   &kp LGUI     &trans       &kp SPACE    &kp RET      &trans        &trans
