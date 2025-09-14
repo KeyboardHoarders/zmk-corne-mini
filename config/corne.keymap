@@ -222,7 +222,7 @@
         };
 
         EXTRA {
-                display-name = "System";
+                display-name = "Mouse";
             bindings = <
 &trans  &trans       &trans         &mmv MOVE_UP       &trans      &msc SCRL_UP    &trans  &trans  &trans  &trans  &trans      &trans
 &trans  &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN     &mmv MOVE_RIGHT   &msc SCRL_DOWN            &trans  &trans  &trans  &trans  &trans       &trans
