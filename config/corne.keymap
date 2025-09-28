@@ -102,7 +102,7 @@
             bindings = <
 &trans  &kp N1           &kp N2      &kp N3      &kp N4           &kp N5           &kp N6           &kp N7        &kp N8        &kp N9            &kp N0      &trans
 &trans  &hm LCTRL TAB    &trans      &trans      &hm LSHFT DEL    &trans           &hm RSHFT LEFT   &hm RGUI DOWN &hm RALT UP   &hm RCTRL RIGHT   &kp ESC     &trans
-&trans  &trans           &trans      &trans      &trans           &trans           &kp PG_UP        &kp PG_DN     &trans        &trans            &trans      &trans
+&trans  &kp GLOBE           &trans      &trans      &trans           &trans           &kp PG_UP        &kp PG_DN     &trans        &trans            &trans      &trans
                                      &kp LGUI    &trans           &kp SPACE        &kp RET          &trans        &trans
             >;
         };
