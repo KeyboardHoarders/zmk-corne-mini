@@ -60,7 +60,7 @@
             require-prior-idle-ms = <100>;  
             slow-release;                   
             key-positions = <2 3>;          // W + E
-            layers = <DEF>;
+            layers = <DEF SYM SYS>;
             bindings = <&kp ESC>;
         };
 
@@ -69,7 +69,7 @@
             require-prior-idle-ms = <100>;  
             slow-release;                   
             key-positions = <14 15>;        // S + D  
-            layers = <DEF>;
+            layers = <DEF SYM SYS>;
             bindings = <&kp TAB>;
         };
     };
@@ -90,8 +90,8 @@
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &kp EXCL         &kp AT            &kp HASH          &kp DLLR          &kp PRCNT         &kp CARET         &hm RCTRL QZ_UE   &kp LBKT          &kp RBKT          &hm RGUI QZ_OE    &trans
-&trans  &hm LCTRL QZ_AE  &hm LALT QZ_SZ    &hm LGUI LPAR     &hm LSHFT RPAR    &kp LBRC          &kp RBRC          &kp UNDER         &hm RGUI EQUAL    &hm RALT PLUS     &kp BSLH          &trans
+&trans  &kp EXCL         &kp AT            &kp HASH          &kp DLLR          &kp PRCNT         &kp CARET         &kp QZ_UE   &kp LBKT          &kp RBKT          &hm RGUI QZ_OE    &trans
+&trans  &hm LCTRL QZ_AE  &hm LALT QZ_SZ    &hm LGUI LPAR     &hm LSHFT RPAR    &kp LBRC          &kp RBRC          &hm RSHFT UNDER         &hm RGUI EQUAL    &hm RALT PLUS     &hm RCTRL BSLH          &trans
 &trans  &kp AMPS         &kp QMARK         &kp DQT           &kp GRAVE         &kp TILDE         &kp PIPE          &kp SQT           &kp LT            &kp GT            &kp STAR          &trans
                                            &kp LGUI          &trans            &kp SPACE         &kp RET           &trans            &trans
             >;
@@ -101,7 +101,7 @@
             display-name = "Nav";
             bindings = <
 &trans  &kp N1           &kp N2      &kp N3      &kp N4           &kp N5           &kp N6           &kp N7        &kp N8        &kp N9            &kp N0      &trans
-&trans  &hm LCTRL TAB    &trans      &trans      &hm LSHFT DEL    &trans           &hm RSHFT LEFT   &hm RGUI DOWN &hm RALT UP   &hm RCTRL RIGHT   &kp ESC     &trans
+&trans  &kp TAB    &trans      &trans      &kp DEL    &trans           &kp LEFT   &kp DOWN &kp UP   &kp RIGHT   &kp ESC     &trans
 &trans  &kp GLOBE           &trans      &trans      &trans           &trans           &kp PG_UP        &kp PG_DN     &trans        &trans            &trans      &trans
                                      &kp LGUI    &trans           &kp SPACE        &kp RET          &trans        &trans
             >;
