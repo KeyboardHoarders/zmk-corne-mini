@@ -55,23 +55,26 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_we_esc {
-            timeout-ms = <40>;              
-            require-prior-idle-ms = <100>;  
-            slow-release;                   
-            key-positions = <2 3>;          // W + E
-            layers = <DEF SYM SYS>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_sd_tab {
-            timeout-ms = <40>;              
-            require-prior-idle-ms = <100>;  
-            slow-release;                   
-            key-positions = <14 15>;        // S + D  
-            layers = <DEF SYM SYS>;
-            bindings = <&kp TAB>;
-        };
+        combo_ae_ae {
+            timeout-ms = <50>;
+            key-positions = <6 2>;  // A + E
+            bindings = <&kp QZ_AE>; // Ä
+        }
+        combo_oe_oe {
+            timeout-ms = <50>;
+            key-positions = <2 20>;  // O + E
+            bindings = <&kp QZ_OE>; // Ö
+        }
+        combo_ue_ue {
+            timeout-ms = <50>;
+            key-positions = <2 18>;  // U + E
+            bindings = <&kp QZ_UE>; // Ü
+        }
+        combo_sz {
+            timeout-ms = <50>;
+            key-positions = <6 12>;  // S + Z
+            bindings = <&kp QZ_SS>; // ß
+        }
     };
 
     keymap {
@@ -81,29 +84,29 @@
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q        &kp W        &kp E       &kp R        &kp T        &kp Y    &kp U        &kp I          &kp O        &kp P               &kp BACKSPACE
-&kp LSHFT  &hm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F  &kp G        &kp H    &hm RSHFT J  &hm RGUI K     &hm RALT L   &hm RCTRL SEMICOLON &kp SQT
+&kp LSHFT  &kp A  &kp S   &kp D  &kp F  &kp G        &kp H    &kp J  &kp K     &kp L   &kp SEMICOLON &kp SQT
 &kp LCTRL  &kp Z        &kp X        &kp C       &kp V        &kp B        &kp N    &kp M        &kp COMMA      &kp DOT      &kp MINUS           &kp RSHFT
-                                     &kp LGUI    &tog 1       &kp SPACE    &kp RET  &tog 2       &kp BACKSPACE
+                                     &mt LCTRL TAB    &kp LGUI       &lt SYM SPACE    &lt NAV RET  &mt RSHFT BSPC       &mt LALT ESC 
             >;
         };
 
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &kp EXCL         &kp AT            &kp HASH          &kp DLLR          &kp PRCNT         &kp CARET         &kp QZ_UE   &kp LBKT          &kp RBKT          &hm RGUI QZ_OE    &trans
-&trans  &hm LCTRL QZ_AE  &hm LALT QZ_SZ    &hm LGUI LPAR     &hm LSHFT RPAR    &kp LBRC          &kp RBRC          &hm RSHFT UNDER         &hm RGUI EQUAL    &hm RALT PLUS     &hm RCTRL BSLH          &trans
-&trans  &kp AMPS         &kp QMARK         &kp DQT           &kp GRAVE         &kp TILDE         &kp PIPE          &kp SQT           &kp LT            &kp GT            &kp STAR          &trans
-                                           &kp LGUI          &trans            &kp SPACE         &kp RET           &trans            &trans
+&trans  &kp N1         &kp N2         &kp N3         &kp N4         &kp N5         &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &trans
+&trans  &kp PLUS       &kp MINUS      &kp STAR       &kp EQUAL      &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PERCENT    &kp CARET      &trans
+&trans  &kp U20AC      &kp UNDERSCORE &kp PIPE       &kp SQT        &kp DQT        &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp BSLH       &trans
+                                       &trans        &trans         &trans         &trans         &trans         &trans
             >;
         };
  
         NAV {
             display-name = "Nav";
             bindings = <
-&trans  &kp N1           &kp N2      &kp N3      &kp N4           &kp N5           &kp N6           &kp N7        &kp N8        &kp N9            &kp N0      &trans
-&trans  &kp TAB    &trans      &trans      &kp DEL    &trans           &kp LEFT   &kp DOWN &kp UP   &kp RIGHT   &kp ESC     &trans
-&trans  &kp GLOBE           &trans      &trans      &trans           &trans           &kp PG_UP        &kp PG_DN     &trans        &trans            &trans      &trans
-                                     &kp LGUI    &trans           &kp SPACE        &kp RET          &trans        &trans
+&trans  &trans           &trans      &trans      &trans           &trans           &trans           &trans       &trans       &trans            &trans      &trans
+&trans  &trans    &kp TILDE      &kp LBKT      &kp LPAR    &kp LBRC           &kp RBRC   &kp RPAR &kp RBKT   &kp GRAVE   &trans     &trans
+&trans  &trans           &trans      &trans      &trans           &trans           &trans        &trans     &trans        &trans            &trans      &trans
+                                     &trans    &trans           &trans        &trans          &trans        &trans
             >;
         };
 
@@ -127,13 +130,10 @@
             >;
         };
     };
-
     conditional_layers {
-        compatible = "zmk,conditional-layers";
-
         sys_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <SYM NAV>;
+            then-layer = <SYS>;
         };
     };
 };
