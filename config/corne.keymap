@@ -55,25 +55,28 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_ae_ae {
+        combo_ae {
             timeout-ms = <50>;
-            key-positions = <13 3>;  // A + E
-            bindings = <&kp DE_A_UMLAUT>; // Ä
+            key-positions = <13 3>;                  // A + E
+            bindings = <&uc 0x00E4 0x00C4>;          // ä / Ä
         };
-        combo_oe_oe {
+
+        combo_oe {
             timeout-ms = <50>;
-            key-positions = <3 9>;  // O + E
-            bindings = <&kp DE_O_UMLAUT>; // Ö
+            key-positions = <3 9>;                   // O + E
+            bindings = <&uc 0x00F6 0x00D6>;          // ö / Ö
         };
-        combo_ue_ue {
+
+        combo_ue {
             timeout-ms = <50>;
-            key-positions = <3 7>;  // U + E
-            bindings = <&kp DE_U_UMLAUT>; // Ü
+            key-positions = <3 7>;                   // U + E
+            bindings = <&uc 0x00FC 0x00DC>;          // ü / Ü
         };
+
         combo_sz {
             timeout-ms = <50>;
-            key-positions = <25 14>;  // S + Z
-            bindings = <&kp DE_SZ>; // ß
+            key-positions = <25 14>;                 // S + Z
+            bindings = <&uc 0x00DF 0x1E9E>;          // ß / ẞ
         };
     };
 
@@ -130,10 +133,10 @@
             >;
         };
     };
-    conditional_layers {
-        sys_layer {
-            if-layers = <SYM NAV>;
-            then-layer = <SYS>;
-        };
+        conditional_layers {
+            sys_layer {
+                if-layers = <SYM NAV>;
+                then-layer = <SYS>;
+            };
     };
 };
