@@ -56,7 +56,7 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp A>;
+            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp A>;
         };
 
         oe_macro: oe_umlaut {
@@ -64,7 +64,7 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp O>;
+            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp O>;
         };
 
         ue_macro: ue_umlaut {
@@ -72,7 +72,7 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp U>;
+            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp U>;
         };
 
         sz_macro: sz_eszett {
@@ -80,18 +80,18 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp S>;
+            bindings = <&macro_tap &mo LALT &macro_tap &kp S>;
         };
 
     };
 
     combos {
         compatible = "zmk,combos";
-        
+
         combo_system {
             timeout-ms = <50>;
-            key-positions = <1 10>;                  // Q + P (opposite sides)
-            bindings = <&to SYS>;                    // Toggle to System layer
+            key-positions = <7 11>;                  // A + ; (semicolon)
+            bindings = <&to SYS>;                    // Go back to Base layer
         };
 
         combo_ae {
