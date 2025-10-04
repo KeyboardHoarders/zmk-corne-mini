@@ -50,6 +50,11 @@
             bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
             mods = <(MOD_LSFT)>;
         };
+        
+        uc: unicode {
+            compatible = "zmk,behavior-unicode";
+            #binding-cells = <2>;
+        };
     };
 
     combos {
