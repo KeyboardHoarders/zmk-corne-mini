@@ -52,37 +52,6 @@
         };
 
 
-        ae: ae_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp A>;
-        };
-
-        oe: oe_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp O>;
-        };
-
-        ue: ue_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp U>;
-        };
-
-        sz: sz_eszett {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp S>;
-        };
     };
 
     combos {
@@ -91,25 +60,31 @@
         combo_ae {
             timeout-ms = <50>;
             key-positions = <13 3>;                  // A + E
-            bindings = <&ae>;                        // ä
+            bindings = <&kp DE_A_UMLAUT>;            // ä
         };
 
         combo_oe {
             timeout-ms = <50>;
             key-positions = <3 9>;                   // O + E
-            bindings = <&oe>;                        // ö
+            bindings = <&kp DE_O_UMLAUT>;            // ö
         };
 
         combo_ue {
             timeout-ms = <50>;
             key-positions = <3 7>;                   // U + E
-            bindings = <&ue>;                        // ü
+            bindings = <&kp DE_U_UMLAUT>;            // ü
         };
 
         combo_sz {
             timeout-ms = <50>;
             key-positions = <25 14>;                 // S + Z
-            bindings = <&sz>;                        // ß
+            bindings = <&kp DE_ESZETT>;              // ß
+        };
+
+        combo_system {
+            timeout-ms = <50>;
+            key-positions = <33 34>;                 // SPACE + RET
+            bindings = <&to SYS>;                    // Go to System layer
         };
     };
 
