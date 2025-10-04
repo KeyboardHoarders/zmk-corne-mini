@@ -82,6 +82,7 @@
             tap-ms = <0>;
             bindings = <&macro_press &mo LALT &macro_tap &kp S>;
         };
+
     };
 
     combos {
@@ -90,7 +91,14 @@
         combo_system {
             timeout-ms = <50>;
             key-positions = <1 2>;                   // Q + W (no hold behaviors)
-            bindings = <&to SYS>;                    // Toggle to System layer
+            bindings = <&to SYS>;                    // Go to System layer
+        };
+
+        combo_base {
+            timeout-ms = <50>;
+            key-positions = <1 2>;                   // Q + W (same keys)
+            bindings = <&to DEF>;                    // Go back to Base layer
+            layers = <SYS>;                          // Only works from System layer
         };
 
         combo_ae {
