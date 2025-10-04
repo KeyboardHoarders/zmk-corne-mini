@@ -56,7 +56,7 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp A>;
+            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp A>;
         };
 
         oe_macro: oe_umlaut {
@@ -90,32 +90,32 @@
 
         combo_system {
             timeout-ms = <50>;
-            key-positions = <7 11>;                  // A + ; (semicolon)
+            key-positions = <13 22>;                  // A + ; (semicolon)
             bindings = <&to SYS>;                    // Go back to Base layer
         };
 
         combo_ae {
             timeout-ms = <50>;
-            key-positions = <7 3>;                   // A + E
-            bindings = <&ae_macro>;                  // ä
+            key-positions = <13 3>;                  // A + E
+            bindings = <&ae_macro>;                  // ä (macro)
         };
 
         combo_oe {
             timeout-ms = <50>;
-            key-positions = <21 15>;                 // O + E
-            bindings = <&oe_macro>;                  // ö
+            key-positions = <9 3>;                 // O + E
+            bindings = <&oe_macro>;                  // ö (macro)
         };
 
         combo_ue {
             timeout-ms = <50>;
-            key-positions = <19 15>;                 // U + E
-            bindings = <&ue_macro>;                  // ü
+            key-positions = <7 3>;                 // U + E
+            bindings = <&ue_macro>;                  // ü (macro)
         };
 
         combo_sz {
             timeout-ms = <50>;
-            key-positions = <8 12>;                  // S + Z
-            bindings = <&sz_macro>;                  // ß
+            key-positions = <14 25>;                  // S + Z
+            bindings = <&sz_macro>;                  // ß (macro)
         };
     };
 
