@@ -113,10 +113,10 @@
         SYS {
             display-name = "System";
             bindings = <
-&trans  &kp C_BRI_DN &kp C_BRI_UP  &trans &trans    &trans          &trans          &trans        &kp C_MUTE           &kp C_VOL_DOWN      &kp C_VOL_UP
-&trans  &trans       &trans       &trans     &trans       &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans      &trans
-&trans  &mo CRIT       &trans       &trans     &trans       &trans          &mkp MB1        &mkp MB2        &msc SCRL_UP  &msc SCRL_DOWN   &trans      &trans
-                                  &trans     &trans       &trans          &trans          &trans          &trans
+&trans  &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans       &trans     &trans     &trans     &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &trans
+&trans  &trans        &trans        &trans      &trans       &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT &trans  &trans
+&trans  &mo CRIT      &trans        &trans      &trans       &trans     &mkp MB1   &mkp MB2   &msc SCRL_UP &msc SCRL_DOWN &trans        &trans
+                                     &trans     &trans       &trans     &trans     &trans     &trans            
             >;
         };
 
