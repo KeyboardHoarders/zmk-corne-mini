@@ -50,10 +50,45 @@
             bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
             mods = <(MOD_LSFT)>;
         };
-        
+
         uc: unicode {
-            compatible = "zmk,behavior-unicode";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <2>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_tap &macro_param_1to0 &macro_tap &macro_param_2to0>;
+        };
+
+        ae: ae_umlaut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp A>;
+        };
+
+        oe: oe_umlaut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp O>;
+        };
+
+        ue: ue_umlaut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp U>;
+        };
+
+        sz: sz_eszett {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &mo LALT &macro_tap &kp S>;
         };
     };
 
@@ -63,25 +98,25 @@
         combo_ae {
             timeout-ms = <50>;
             key-positions = <13 3>;                  // A + E
-            bindings = <&uc 0x00E4 0x00C4>;          // ä / Ä
+            bindings = <&ae>;                        // ä
         };
 
         combo_oe {
             timeout-ms = <50>;
             key-positions = <3 9>;                   // O + E
-            bindings = <&uc 0x00F6 0x00D6>;          // ö / Ö
+            bindings = <&oe>;                        // ö
         };
 
         combo_ue {
             timeout-ms = <50>;
             key-positions = <3 7>;                   // U + E
-            bindings = <&uc 0x00FC 0x00DC>;          // ü / Ü
+            bindings = <&ue>;                        // ü
         };
 
         combo_sz {
             timeout-ms = <50>;
             key-positions = <25 14>;                 // S + Z
-            bindings = <&uc 0x00DF 0x1E9E>;          // ß / ẞ
+            bindings = <&sz>;                        // ß
         };
     };
 
