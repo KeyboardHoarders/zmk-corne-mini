@@ -52,7 +52,7 @@
         };
         
         uc: unicode {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-unicode";
             #binding-cells = <2>;
         };
     };
