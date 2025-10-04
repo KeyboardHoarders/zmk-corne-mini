@@ -73,7 +73,7 @@
         combo_sz {
             timeout-ms = <50>;
             key-positions = <6 12>;  // S + Z
-            bindings = <&kp QZ_SS>; // ß
+            bindings = <&kp QZ_SZ>; // ß
         };
     };
 
