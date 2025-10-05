@@ -13,6 +13,12 @@
 #define SYS 3
 #define CRIT 4
 
+ZMK_UNICODE_PAIR( de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 ) // ä, Ä
+ZMK_UNICODE_PAIR( de_oe,   N0, N0,  F, N6,   N0, N0,  D, N6 ) // ö, Ö
+ZMK_UNICODE_PAIR( de_ue,   N0, N0,  F,  C,   N0, N0,  D,  C ) // ü, Ü
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C) // €
+ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß 
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -51,37 +57,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        ae_macro: ae_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_press &mo LALT &macro_tap &kp U &macro_release &mo LALT &macro_tap &kp A>;
-        };
-
-        oe_macro: oe_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp O>;
-        };
-
-        ue_macro: ue_umlaut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_tap &mo LALT &macro_tap &kp U &macro_tap &mo LALT &macro_tap &kp U>;
-        };
-
-        sz_macro: sz_eszett {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&macro_tap &mo LALT &macro_tap &kp S>;
-        };
 
     };
 
@@ -97,25 +72,25 @@
         combo_ae {
             timeout-ms = <50>;
             key-positions = <13 3>;                  // A + E
-            bindings = <&ae_macro>;                  // ä (macro)
+            bindings = <&de_ae>;                    // ä, Ä (unicode)
         };
 
         combo_oe {
             timeout-ms = <50>;
             key-positions = <9 3>;                 // O + E
-            bindings = <&oe_macro>;                  // ö (macro)
+            bindings = <&de_oe>;                    // ö, Ö (unicode)
         };
 
         combo_ue {
             timeout-ms = <50>;
             key-positions = <7 3>;                 // U + E
-            bindings = <&ue_macro>;                  // ü (macro)
+            bindings = <&de_ue>;                    // ü, Ü (unicode)
         };
 
         combo_sz {
             timeout-ms = <50>;
             key-positions = <14 25>;                  // S + Z
-            bindings = <&sz_macro>;                  // ß (macro)
+            bindings = <&de_sz>;                    // ß (unicode)
         };
     };
 
@@ -171,11 +146,5 @@
                                      &trans        &trans      &trans            &trans  &trans  &trans
             >;
         };
-    };
-        conditional_layers {
-            sys_layer {
-                if-layers = <SYM NAV>;
-                then-layer = <SYS>;
-            };
     };
 };
