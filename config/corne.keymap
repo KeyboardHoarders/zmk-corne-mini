@@ -1,7 +1,4 @@
 #include <behaviors.dtsi>
-#define HOST_OS 2                 // 1 = Linux, 2 = macOS, 3 = Windows
-#include "zmk-helpers/helper.h"
-#include "zmk-helpers/unicode-chars/german.dtsi"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include "keys_de.h"
@@ -17,22 +14,32 @@
 #define SYS 3
 #define CRIT 4
 
-ZMK_UNICODE_PAIR( de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 ) // ä, Ä
-ZMK_UNICODE_PAIR( de_oe,   N0, N0,  F, N6,   N0, N0,  D, N6 ) // ö, Ö
-ZMK_UNICODE_PAIR( de_ue,   N0, N0,  F,  C,   N0, N0,  D,  C ) // ü, Ü
-ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C) // €
-ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß 
 
 / {
     behaviors {
-        hm: homerow_mods {
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
-            quick-tap-ms = <180>;
-            global-quick-tap;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        /* --- Right-hand HRMs --- */
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
         };
 
         para: para {
@@ -64,33 +71,6 @@ ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß
 
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        combo_ae {
-            timeout-ms = <50>;
-            key-positions = <13 3>;                  // A + E
-            bindings = <&de_ae>;                    // ä, Ä (unicode)
-        };
-
-        combo_oe {
-            timeout-ms = <50>;
-            key-positions = <9 3>;                 // O + E
-            bindings = <&de_oe>;                    // ö, Ö (unicode)
-        };
-
-        combo_ue {
-            timeout-ms = <50>;
-            key-positions = <7 3>;                 // U + E
-            bindings = <&de_ue>;                    // ü, Ü (unicode)
-        };
-
-        combo_sz {
-            timeout-ms = <50>;
-            key-positions = <14 25>;                  // S + Z
-            bindings = <&de_sz>;                    // ß (unicode)
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -99,9 +79,9 @@ ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q        &kp W        &kp E       &kp R        &kp T        &kp Y    &kp U        &kp I          &kp O        &kp P               &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S   &kp D  &kp F  &kp G        &kp H    &kp J  &kp K     &kp L   &kp SEMICOLON &kp SQT
+&kp LSHFT  &hml LCTRL A  &hml LALT S   &hml LGUI D  &hml LSHFT F  &kp G        &kp H    &hmr RSHFT J  &hmr RGUI K     &hmr RALT L   &hmr RCTRL SEMICOLON &kp SQT
 &kp LCTRL  &kp Z        &kp X        &kp C       &kp V        &kp B        &kp N    &kp M        &kp COMMA      &kp DOT      &kp MINUS           &kp RSHFT
-                                     &mt LCTRL TAB    &kp LGUI       &lt SYM SPACE    &lt NAV RET  &mt RSHFT BSPC       &mt LALT ESC 
+                                     &lt SYS TAB    &kp LGUI       &lt SYM SPACE    &lt NAV RET  &kp BSPC       &kp ESC 
             >;
         };
 
@@ -109,7 +89,7 @@ ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß
             display-name = "Sym";
             bindings = <
 &trans  &kp N1         &kp N2         &kp N3         &kp N4         &kp N5         &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &trans
-&trans  &kp PLUS       &kp MINUS      &kp STAR       &kp EQUAL      &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PERCENT    &kp CARET      &trans
+&trans  &hml LCTRL PLUS       &hml LALT MINUS      &hml LGUI STAR       &hml LSHFT EQUAL      &kp EXCL       &kp AT         &hmr RSHFT HASH       &hmr RGUI DLLR       &hmr RALT PERCENT    &hmr RCTRL CARET      &trans
 &trans  &kp DE_EURO      &kp UNDERSCORE &kp PIPE       &kp SQT        &kp DQT        &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp BSLH       &trans
                                        &trans        &trans         &trans         &trans         &trans         &trans
             >;
