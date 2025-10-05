@@ -6,7 +6,8 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 #include <dt-bindings/zmk/pointing.h>
-#include "zmk-helpers/unicode-chars/german.dtsi"
+#include <zmk/unicode.h> 
+#include <zmk-helpers/unicode-chars/german.dtsi>
 
 
 #define DEF 0
