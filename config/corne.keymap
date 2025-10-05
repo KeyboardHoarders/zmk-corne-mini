@@ -6,6 +6,7 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 #include <dt-bindings/zmk/pointing.h>
+#include <zmk/unicode.h>
 
 #define DEF 0
 #define SYM 1
@@ -62,12 +63,6 @@ ZMK_UNICODE_SINGLE(de_sz, N0, N0, D, F) // ß
 
     combos {
         compatible = "zmk,combos";
-
-        combo_system {
-            timeout-ms = <50>;
-            key-positions = <13 22>;                  // A + ; (semicolon)
-            bindings = <&to SYS>;                    // Go back to Base layer
-        };
 
         combo_ae {
             timeout-ms = <50>;
