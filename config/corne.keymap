@@ -66,7 +66,7 @@
             bindings = <
 &kp TAB    &kp Q        &kp W        &kp E       &kp R        &kp T        &kp Y    &kp U        &kp I          &kp O        &kp P               &kp BACKSPACE
 &kp LSHFT  &hmm LCTRL A  &hmm LALT S   &hmm LGUI D  &hmm LSHFT F  &kp G        &kp H    &hmm RSHFT J  &hmm RGUI K     &hmm RALT L   &hmm RCTRL SEMICOLON &kp SQT
-&kp LCTRL  &kp Z        &kp X        &kp C       &kp V        &kp B        &kp N    &kp M        &kp COMMA      &kp DOT      &kp MINUS           &kp RSHFT
+&kp LCTRL  &kp Z        &kp X        &kp C       &kp V        &kp B        &kp N    &kp M        &kp COMMA      &kp DOT      &kp SLASH           &kp RSHFT
                                      &lt SYS TAB    &kp LGUI       &lt SYM SPACE    &lt NAV RET  &kp BSPC       &kp ESC 
             >;
         };
